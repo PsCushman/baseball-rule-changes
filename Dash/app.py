@@ -1,17 +1,47 @@
 import dash
 from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
-import pandas as pd
 import plotly.express as px
+import pandas as pd
+
+external_stylesheets = [('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap')]
+
+# Set up inline styles
+BODY_STYLE = {
+    'backgroundColor': '#e1ad01',
+    'margin': '0',
+    'padding': '0',
+    'font-family': 'Alfa Slab One, cursive'
+}
+
+# Define inline styles for the z-score box
+z_score_box_style_base = {
+    "padding": "10px",
+    "border": "2px solid #3e363f",
+    "font-weight": "bold",
+    "margin-top": "10px",
+    "width": "fit-content",
+    "color": '#333333'  # Text color
+}
+
+z_score_box_style_green = {
+    **z_score_box_style_base,
+    "background-color": "#3f826d"  # Green background color
+}
+
+z_score_box_style_red = {
+    **z_score_box_style_base,
+    "background-color": "#e2725b"  # Red background color
+}
 
 # Create the Dash app
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-app.layout = html.Div([
+app.layout = html.Div(style=BODY_STYLE, children=[
     html.H1("Baseball Player Dashboard"),
     dcc.Input(id="player-name", type="text", placeholder="Enter player's name"),
     html.Div(id="output-container", children=[
-        html.Div(id="z-score-box", className="z-score-box"),  # Add the z-score box div here
+        html.Div(id="z-score-box", className="z-score-box", style=z_score_box_style_base),
         html.Div(id="output-graphs"),
         html.Div(id="player-info-container", className="player-info-container")
     ])
@@ -24,6 +54,7 @@ app.layout = html.Div([
      Output("player-info-container", "children")],
     [Input("player-name", "value")]
 )
+
 def update_graphs(name):
     if not name:
         return [], [], "z-score-box", []
@@ -43,10 +74,16 @@ def update_graphs(name):
     z_score_difference = player_info["z_scores_avg_woba"].values[0]
     z_score_color_class = "z-score-box-green" if z_score_difference > 0 else "z-score-box-red"
 
+# Apply the appropriate style based on z_score_color_class
+    if z_score_color_class == "z-score-box-green":
+        z_score_box_style = z_score_box_style_green
+    else:
+        z_score_box_style = z_score_box_style_red
+
     z_score_box = html.Div(
         f"Z-Score Difference: {z_score_difference:.2f}",
-        className=z_score_color_class
-    )
+        style=z_score_box_style
+        )
 
     selected_columns = [
         "name", "bip", "ba", "est_ba", "est_ba_minus_ba_diff",
