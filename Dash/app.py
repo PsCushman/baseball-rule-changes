@@ -16,10 +16,11 @@ BODY_STYLE = {
 
 # Define inline styles for the z-score box
 z_score_box_style_base = {
-    "padding": "10px",
+    "padding": "2px",
     "border": "2px solid #3e363f",
     "font-weight": "bold",
-    "margin-top": "10px",
+    "margin-top": "4px",
+    "margin-bottom": "4px",
     "width": "fit-content",
     "color": '#333333'  # Text color
 }
@@ -59,20 +60,20 @@ def update_graphs(name):
     if not name:
         return [], [], "z-score-box", []
 
-    player_data = pd.read_csv("batting_for_learning copy.csv")
+    player_data = pd.read_csv("dash_full_batter_data.csv")
 
     # Use case-insensitive search for player name
-    player_info = player_data[player_data["name"].str.contains(name, case=False)]
+    player_info = player_data[player_data["Name"].str.contains(name, case=False)]
 
     if player_info.empty:
         return [html.Div("Player not found")], [], "z-score-box", []
 
-    fig = px.bar(player_info, x="name", y=["avg_woba", "woba_2023"], 
+    fig = px.bar(player_info, x="Name", y=["avg_wOBA", "wOBA_2023"], 
                  labels={"value": "wOBA"}, title="Average wOBA for Player {}".format(name),
                  barmode="group")
 
-    z_score_difference = player_info["z_scores_avg_woba"].values[0]
-    z_score_color_class = "z-score-box-green" if z_score_difference > 0 else "z-score-box-red"
+    z_score_difference_woba = player_info["z_scores_avg_woba"].values[0]
+    z_score_color_class = "z-score-box-green" if z_score_difference_woba > 0 else "z-score-box-red"
 
 # Apply the appropriate style based on z_score_color_class
     if z_score_color_class == "z-score-box-green":
@@ -81,14 +82,13 @@ def update_graphs(name):
         z_score_box_style = z_score_box_style_red
 
     z_score_box = html.Div(
-        f"Z-Score Difference: {z_score_difference:.2f}",
+        f"wOBA Difference: {z_score_difference_woba:.2f}",
         style=z_score_box_style
         )
 
     selected_columns = [
-        "name", "bip", "ba", "est_ba", "est_ba_minus_ba_diff",
-        "slg", "est_slg", "est_slg_minus_slg_diff", "est_woba",
-        "est_woba"
+        "Name", "AB", "H", "SB", "HR", "RBI", "SO", "AVG",
+        "SLG", "OPS", "WAR", "Barrel%"
     ]
 
     # Round numeric values to 3 decimal places
