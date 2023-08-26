@@ -1,4 +1,4 @@
-Name,Prediction,Actual,Correctness
+Name,BABIP_Prediction,BABIP_Actual,BABIP_Correctness
 Andrew Benintendi,0,0,Correct :)
 Carlos Correa,0,0,Correct :)
 Max Kepler,1,1,Correct :)
