@@ -21,9 +21,9 @@
             <section>
                 <h2>Death to the Shift!</h2>
                 <p>The Modern Era of baseball (2000s-2020s) has seen an increased emphasis on advanced statistics and analytics that has revolutionized player evaluation and strategic decision-making.</p>
-                <p>Teams leveraged data to evaluate players more precisely, influencing strategic decisions. Pitchers excelled as teams shifted to power pitching, optimizing matchups with pitching changes and defensive shifts. </p>
-                <p>To combat these changes, batters began emphasising on launch angles and power hitting led to fewer balls in play.</p>
-                <p>To maintain pace of play and increase excitment, this season the MLB implemented a pitch clock, limited defensive shifts, and a instituted a universal DH, along a few changes to increase base stealing.</p>
+                <p>Teams leveraged data to evaluate players more precisely, influencing strategic decisions. Pitchers excelled as teams shifted to power pitching as well as optimizing matchups with pitching changes and defensive shifts. </p>
+                <p>To combat these changes, hitters began emphasising launch angles and power hitting, leading to fewer balls in play.</p>
+                <p>To maintain pace of play and increase excitment, this season the MLB implemented a pitch clock, limited defensive shifts, and a instituted a universal DH, along a few changes to increase base stealing attempts.</p>
                 <p>All together, these changes were expected to increase pace of play, increase balls in play, and over all, just make the game more exciting.</p>
                 <div class="centered-section">
                 <button class="link-button" onclick="window.open('https://www.mlb.com/news/mlb-2023-rule-changes-pitch-timer-larger-bases-shifts/', '_blank')">Rule Changes</button>
@@ -74,14 +74,14 @@
                     <img src="static/images/too_many_features.png" alt="Correlation Plots" style="width: 50%;">
                 </div>
                 <p>In the end, more features reliably returned more accurate models and so, I kept as many columns as I could (I did have to drop some with NAN values).</p>
-                <p>Lastly, I chose to zscore and differences between the the averages for the prior years. This is because, the rule changes were meant to increase offensiive outcomes for all batters.</p>
-                <p>The point of this exersise is to see if we could predict who was benifiting the most from the rule changes the most. Therefore, I compared the zscores so that we could see who improved or delined when compared to their peers.</p>
+                <p>Lastly, I chose to Z-score and differences between the the averages for the prior years. This is because, the rule changes were meant to increase offensiive outcomes for all batters.</p>
+                <p>The point of this exersise is to see if we could predict who was benifiting the most from the rule changes and why. Therefore, I compared the Z-scores so that we could see who improved or delined when compared to their peers.</p>
             </section>
 
             <section>
                 <h2>Making the Model</h2>
-                <p>I tried everything. Regressions, Nueral Networks, Oversampling, Logistic regressions, Tuners and Crooners.</p>
-                <p>I got a lot of help from <a href="https://johnpette.medium.com/, '_blank'">John Pette's predictions /a> and the machine learning methods contained there in. Xgboost and SMOTE where new to me and it has some great explianations and links to even better explainations.</p>
+                <p>I tried everything. Regressions, Nueral Networks, Oversampling, Logistic Regressions, Tuners and Crooners.</p>
+                <p>I got a lot of help from <a href="https://johnpette.medium.com/" target="_blank">John Pette's predictions</a> and the machine learning methods contained there in. XGBoost and SMOTE where new to me and it has some great explianations and links to even better explainations.</p>
                 <p>In the end, once I wrote out the function and could quickly load and rerun models, I, through trail and error, got something to work with.</p>
                 <br>
                 <p style="text-align: center;"><strong>XGBoost Classifier with SMOTE Over Sampling</strong></p>
@@ -161,25 +161,25 @@
             </section>
 
             <section>
-                <h2>Above the Mendoza Line: Testing wBOA</h2>
+                <h2>Above the Mendoza Line: Predicting wOBA Improvement</h2>
                 <p>So here we go! After cleaning the data and setting things up for success, I ran the model. I chose wOBA as my first model, because it mesaures overall hitting production.</p>
                 <p>I called the function and ran it.</p>
                 <pre><code class="language-python">
-                    #Run the model with top 5 most important features.
+                #Run the model with all the features.
                 result_woba = train_and_evaluate_classifacation_model(batter_woba_df, 'zscore_difference_woba')
 
                 Accuracy: 0.65
                 Recall: 0.65    
                 </code></pre>
-                <p>In all seriousness, it wasn't perfect, but I was actually happy enough with it considering all the things that could go wrong or right for a batter for a given season.</p>
+                <p>In all seriousness, it wasn't perfect, but I was actually happy enough with it considering all the things that could go wrong or right for a batter in a given season.</p>
                 <p>Now, what I was most interested in is the feature proformance or, what elements were the algorithms using most to make this perdiction. Because there are so many columns, the feature importanc is relativeley low for each, even for the most important.</p>
                 <p>However, the top few were a lot more imprtant than the rest.</p>
                 <p>I used the SHAP module to calculate and plot the importance.</p>
                 <div style="text-align: center;">
-                    <p><strong>SHAP Violin Plot</strong></p>
+                    <p><strong>SHAP Violin Plot for wOBA</strong></p>
                 <img src="static/images/shap_summary_plot_woba copy.png" alt="Shap wOBA">
                 </div>
-                <p>Turns out, to predict over hitting preformance, you can look to OPS, Hard Hit%, and BB/K ratio as incicators of overall hitting performance under the rules.</p>
+                <p>Turns out, to predict over hitting preformance, you can look to OPS, Hard Hit%, and BB/K ratio as incicators to predict overall hitting performance under the new rules.</p>
                 <p>In fact, when I took the top five features and ran the model with only those, I got the same Accuracy and Recall.</p> 
                 <pre><code class="language-python">
                 #Run the model with top 5 most important features.
@@ -188,16 +188,22 @@
                         Accuracy: 0.65
                         Recall: 0.65    
                     </code></pre>
-                <p>This didn't work with every model, but once I knew the most imporantant features for predicting wOBA, I decreased the features without effecting perfomance.</p>
+                <p>This didn't work with quite as well every model, but now I knew the most imporantant features for predicting wOBA, even when exculding all the other statistics, could do some pretty reliable predicting.</p>
+                <p>And, it gave me confidence that the feature importance of other models were turly important and could be used to understand why certain players were more sucessful after the rule changes.</p>
             </section>
 
             <section>
                 <h2>Handedness</h2>
-                <p>When going over the data, I doubled checked to see if BABIP has predictably increased for left-handed batters as this is the group most affected by defensive shifts. Looking chart below, you can see that as analytics and denfinsive shifts gained more importance after the turn of the century, lefties were disprontionally affected.</p>
-                <div style="text-align: center;">
+                <p>When going over the data, I checked to see if BABIP has predictably increased for left-handed batters as this is the group most affected by defensive shifts. Looking at the chart below, you can see that as analytics and denfinsive shifts gained more importance after the turn of the century, lefties were disprontionally affected.</p>
+                <div class="centered-section">
                     <p><strong>Batting Against the Shift before 2023 </strong></p>
                 <img src="static/images/Shifting-Lefties.png" alt="Shifting", style="width: 50%;">
+            </div>
+            <br>
+            <div class="centered-section">
+                <button class="link-button" onclick="window.open('https://www.si.com/more-sports/2011/05/10/righty-overshift/', '_blank')">Why are teams reluctant to shift against righthanded batters?</button>
                 </div>
+                <br>
                 <p>I figured adding handedness in my models would massiveley increase my accuracy. So much in fact, that I considered not doing it because I was going to have to do some ETL to get to it.</p>
                 <p>And I thought, handedness might be too closely linked with the outcome variable, to the extent that it might introduce redundancy or overfitting in a predictive model. But, I did it anyway so I could see some models in the 90s.</p>
                 <p>Fangraphs does not include handedness, perhaps becuase they do include splits batting AVG, OPS, Etc. agaist RHP v LHP(more on that later). So I had to find a database with the handedness included, which I did at <a href="https://baseballsavant.mlb.com//">Baseball Savant.</a></p>
@@ -212,15 +218,17 @@
                 </code></pre>
                 <p style="text-align: center;"><strong>BABIP Model Performance with Handedness</strong></p>
                 <pre><code class="language-python">
-    result_babip_w_bat_side = train_and_evaluate_classifacation_model(batter_w_bat_side, 'zscore_difference_babip')
+        result_babip_w_bat_side = train_and_evaluate_classifacation_model(batter_w_bat_side, 'zscore_difference_babip')
 
                 Accuracy: 0.75
                 Recall: 0.75
                 </code></pre>
                 <p>However, for the rest of the models, the performance dip a point or two. Because handedness seemed such a stark distinction, I thought it would really improve all models.</p>
-                <p>I think two elements effected this.</p>
-                <p>First, because I included so many feature, the model mostly likely handeled handedness inevertley through splits and other features. Adding bat-side, was most likley redudant and may have contadicted all elements that helped make the pervious predictions.</p>
-                <p>Second, as outlined by the article below, the shift may have had a little less to do with performance than orginally predicted.</p>
+                <p>Yet, including so many features from the start, may have rendered handedness uncessary. The model mostly likely handeled it inevertley through splits and other features. Adding bat-side, was most likley redudant and may have even contadicted some elements that helped make the pervious predictions.</p>
+                <p>Out of 59% of lefties increased their Z-scores and only 40% of righties. By far the biggest difference.</p>
+                <p>In contrast, for wOBA, 52% of lefties increased and 41% of righties. For SLG, it was 49% and 44%. And lastly, for wRC+ it was 52% and 43%.</p>
+                <p>So while it is true that lefties have benifited most from these new rules, it does not mean that handedness is necessarily the best predictor when we have all the other stats.</p>
+                <p>Click the button for an article that describes the possibilty that bat side may not be the best predictor of success with the rule changes for all players.</p>
                 <div class="centered-section">
                     <button class="link-button" onclick="window.open('https://www.mlb.com/news/shift-rule-effect-on-lefty-hitters/', '_blank')">Will Shift Ban Help These 6 Hitters? Not So Fast...</button>
                 </div>
@@ -229,22 +237,55 @@
 
             <section>
                 <h2>Barrel Up: Results</h2>
-                <p>Best model was SLG. 77% accurancy.</p>
-                <p>Tough to predict so pretty happy. </p>
-                <p>Shap and feature importance for each one.</p>
-                <p>I made a player dashboard where we can imput a players name and it reurns the zscore differences for all the target variables.</p>
+                <p>While I focued on wOBA to start, my best model was SLG at 77% accurancy, with BABIP, wOBA, and wRC+ different levels of success.</p>
+                <pre><code class="language-python">
+                result_slg = train_and_evaluate_classifacation_model(batter_slg_df, 'zscore_difference_slg')
+            
+                print(f"Accuracy: {result_slg ['accuracy']:.2f}")
+                print(f"Recall: {result_slg ['balanced_recall']:.2f}")
+                            
+                            Accuracy: 0.77
+                            Recall: 0.77
+                </code></pre>
+                <p>BABIP (with handedness) topped out at 75%. wRC+ at 67% and as we saw before, wOBA couldn't crack 65%.</p>
+                <p>Now let's check out the SHAP plots to determine feature importance.</p>
+                <div style="text-align: center;">
+                    <p><strong>SHAP Violin Plot for SLG</strong></p>
+                <img src="static/images/shap_slg_class copy.png" alt="Shap SLG">
+                </div>
+                <p>This one is just kinda wild to me. Many of SLG's most important features such as SL-Z(sc), which measures a batter's ability to make contact with sliders thrown within the strike zone, providesd insights into a batter's performance against offspeed piches and their ability to recognize and react to them in the zone. </p>
+                <p>More analyis is needed to determine just why that would be. But they are negativley correlated meaning that if you were bad at hitting offspeed before, it was actually a prediction that you would have more power this year.</p>
+                <p>This could be an indication of less intimating "stuff" as the pitch clock has sped up pichers, leading to in those player that may have struggled before.</p>
+                <div style="text-align: center;">
+                    <p><strong>SHAP Violin Plot for BABIP</strong></p>
+                <img src="static/images/shap_babip_class_handy copy.png" alt="Shap BABIP">
+                </div>
+                <p>Intestingly, bat_side is not even on the SHAP plot. What is cool, and makes total sense when you think about it, is that the Avg BABIP from years past was most important in predicting 2023's BABIP.</p>
+                <p>However, it was inversley connected. It had high feature importance in the negative direction. Meaning if you had lower BABIP before (like many lefties), you were likley to see a more positive Z-score difference.</p>
+                <div style="text-align: center;">
+                    <p><strong>SHAP Violin Plot for wRC+</strong></p>
+                <img src="static/images/shap_wrc_class copy.png" alt="Shap wRC+">
+                </div>
+                <p>wRC+ plus may be the least interesting. The model essetially predicted that is you had trouble before creating runs, the was a likleyhood that you would get better under the new rules when compared to others that may have all peak. Essentially predicting regression to the mean.</p>
+                <br>
+                <p>To display the results, I player dashboard where a user can imput a players name and it reurns the Z-score differences for all the target variables.</p>
                 <p>And, more importantly whether we got the prediction right.</p>
+                <div class="centered-section">
                 <button class="link-button" onclick="window.open('http://127.0.0.1:8050', '_blank')">Prediction Dashboard</button>
+                </div>
             </section>
 
             <section>
                 <h2>Rounding Third: Where to Go from Here</h2>
-                <p>Obviously, home right. No seriously, let's talk about the usefulness of this project.</p>
-                <p>First, I'd like to talk about Tim Anderson of my hometown Chicago White Sox.</p>
-                <p>He's had a horrible year. But</p>
-                <p> Our queries found that Alice Fong Young's School did the best and the marked on our story map.<p>
-                <p>In case you are wondering, Sts. Peter and Paul School did the worst.</p>
+                <p><strong>Home! Obviously. Right?</strong> </p>
+                <br>
+                <p>Understanding how modern rule changes have impacted player performance, was the aim of this project. It delved into the intricate interplay between baseball analytics, statistical modeling, and machine learning. Through the predictive power of various player metrics, we got to shed  some light on which factors could foreseeably determine success under the evolving landscape of the sport.</p>
+                <p>The exploration into the relationship between advanced statistics and player performance yielded both insights and challenges. The integration of machine learning techniques, such as XGBoost with SMOTE oversampling, showcased the potential of harnessing data to uncover underlying trends and patterns. While the models achieved reasonable accuracy in predicting performance metrics such as SLG and BABIP, it's important to note that no model captured the full complexity of human performance within the ever-changing context of a baseball season.</p>
+                <p>As with any endeavor in data analysis, this project has raised more questions than it has answered. The results indicate that certain features play a crucial role in predicting player improvement or regression, yet the "why" remains open for interpretation. Deeper analysis into the specific impact of rule changes, such as the effect of the pitch clock on batter-pitcher interactions could provide a richer understanding of the observed trends.</p>
+                <p>Future explorations could involve refining the models by incorporating more granular data, considering player trajectories over multiple seasons, and examining the the use of some sort of feature tuner. Additionally, investigating the implications of these findings for player development, team strategies, and the game as a whole could offer valuable insights into the broader implications of the rule changes.</p>
+                <p>Ultimately, this project was fun and illustrated the intersection of baseball, data and technology. More than any sport, it lends itself to analysis and it continues to be a fertile ground for exploration.</p>
             </section>
+            
 
 </body>
 </html>
