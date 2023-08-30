@@ -71,7 +71,7 @@ app.layout = html.Div(style=BODY_STYLE, children=[
     html.Div([
         html.A(html.Button("Batter Predictor Analysis", style=button_style), href="https://pscushman.github.io/final-project-analysis/", target="_blank"),
         html.A(html.Button("Predicting WAR for 2023", style=button_style), href="https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes", target="_blank"),
-        html.A(html.Button("Predicting Pitcher Performance", style=button_style), href="https://example.com/page3", target="_blank"),
+        html.A(html.Button("Predicting Pitcher Performance", style=button_style), href="http://127.0.0.1:8050/", target="_blank"),
     ], style={"display": "flex", "align-items": "center", "justify-content": "flex-end"}),
     
     html.Div(dcc.Input(id="player-name", type="text", placeholder="Enter player's name")),
@@ -347,4 +347,4 @@ def update_graphs(name):
         [player_info_table]  # Output "player-info-container.children"
     )
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8051)
