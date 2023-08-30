@@ -18,3 +18,6 @@ Model Evaluation: The model's performance is evaluated using various metrics lik
 Predictions: The trained model is used to predict career WAR for the same dataset (data from 1990 to 2023) and compare these predictions to the actual WAR values.
 
 Top 10 Players: The code sorts the data by predicted WAR values and selects the top 10 players with the highest predicted WAR values. It also prints the top 10 players based on their original WAR values.
+
+Tableu Public Story
+https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes
