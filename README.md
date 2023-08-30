@@ -1,6 +1,9 @@
 # baseball-rule-changes
 Predicting Success following MLBs Rule Changes 
 
+## Deployment
+https://pscushman.github.io/final-project-analysis/
+
 # Resources
 https://kiwidamien.github.io/how-to-do-cross-validation-when-upsampling-data.html
 
