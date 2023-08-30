@@ -1,0 +1,104 @@
+.jumbotron {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Update align-items to flex-start */
+    background-color: #e1ad01;
+    padding: 20px 20px 10px;
+    border-radius: 5px;
+    font-family: 'Alfa Slab One', cursive;
+    color: #1f1f20;
+}
+
+.jumbotron h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1f1f20;
+}
+
+.jumbotron p:first-of-type {
+    font-size: 30px;
+    font-family: 'Alfa Slab One,' cursive;
+    color: #1f1f20;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.jumbotron p:nth-of-type(2) {
+    font-size: 22px;
+    font-family: 'Alfa Slab One', cursive;
+    text-align: right;
+    align-self: flex-end; /* Update align-self to flex-end */
+}
+
+body {
+    background-color: #bcbbbb; /* Replace with your preferred shade of gray */
+}
+
+h1, h2 {
+    font-family: 'Alfa Slab One', cursive;
+    text-align: center;
+}
+
+/* Font styles for paragraphs */
+p {
+    font-family: 'Special Elite', cursive;
+    color: #1f1f20;
+    font-size: 16px;
+    margin-bottom: 1.25em; /* Adjust this value for spacing */
+}
+
+.centered-section {
+    text-align: center;
+}
+
+.image-container {
+        text-align: center;
+}
+
+pre {
+    background-color: #dadada;
+    padding: 10px;
+    border: 1px solid #444444;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 75%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the code block horizontally */
+}
+code {
+    display: block;
+}
+
+.link-button {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 14px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #1f1f20;
+    border-radius: 5px;
+    color: #1f1f20;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #e2725b;
+    color: #1f1f20;
+    border-color: #1f1f20;
+    box-shadow: 0 0 50px #e2725b, 0 0 25px #e2725b, 0 0 150px #e2725b, 0 0 200px #e2725b; /* Increase glow effect on hover */
+}
+
+.dash-button {
+    background-color: #abd1c6;
+    border: 1px solid #abd1c6;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.dash-button:hover {
+    background-color: #d1abc9;
+    border-color: #d1abc9;
+    box-shadow: 0 0 50px #d1abc9, 0 0 25px #d1abc9, 0 0 150px #d1abc9, 0 0 200px #d1abc9; /* Increase glow effect on hover */
+}

@@ -43,13 +43,39 @@ z_score_box_style_red = {
     "padding": "4px",  # Red background
 }
 
+button_style = {
+    "background-color": "#e2725b",
+    "border": "2px solid #3e363f",
+    "color": "#3e363f",
+    "font-family": "Alfa Slab One, cursive",
+    "font-weight": "bold",
+    "padding": "2px",
+    "margin": "2px",
+    "cursor": "pointer",
+    "text-align": "center",
+    "text-decoration": "none",
+    "display": "inline-block",
+    "border-radius": "5px",
+}
+
 
 # Create the Dash app
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(style=BODY_STYLE, children=[
-    html.H1("Baseball Player Dashboard"),
-    dcc.Input(id="player-name", type="text", placeholder="Enter player's name"),
+    html.Div([
+        html.H1("Baseball Player Dashboard"),
+    ], style={"display": "flex", "align-items": "center"}),
+    
+    # Buttons section
+    html.Div([
+        html.A(html.Button("Batter Predictor Analysis", style=button_style), href="https://pscushman.github.io/final-project-analysis/"),
+        html.A(html.Button("David's Button", style=button_style), href="https://example.com/page2"),
+        html.A(html.Button("Leo's Button", style=button_style), href="https://example.com/page3"),
+    ], style={"display": "flex", "align-items": "center", "justify-content": "flex-end"}),
+    
+    html.Div(dcc.Input(id="player-name", type="text", placeholder="Enter player's name")),
+    
     html.Div(id="output-container", children=[
         html.Div(id="output-differences", style={
             "display": "flex",
@@ -209,7 +235,6 @@ def update_graphs(name):
     verdict_wrc = verdict_info["wRC+_Correctness"].values[0]
     verdict_box_class_wrc= "z-score-box-green" if verdict_wrc == "Correct :)" else "z-score-box-red"
     
-    print(verdict_data["woba_Correctness"].values[0])
 
     # Apply the appropriate style based on z_score_color_class
     z_score_box_style_woba = z_score_box_style_green if z_score_color_class_woba == "z-score-box-green" else z_score_box_style_red
@@ -238,30 +263,57 @@ def update_graphs(name):
 
         # Create the verdict boxes using Div elements with the appropriate styles and classes
     verdict_box_style_woba = z_score_box_style_green if verdict_box_class_woba == "z-score-box-green" else z_score_box_style_red
-    verdict_box_woba = html.Div(
-        f"wOBA Prediction: {verdict_woba}",
-        style=verdict_box_style_woba
+
+    verdict_box_woba = html.A(
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_woba_class.png",
+    target="_blank",  # Open link in a new tab
+    style={"text-decoration": "none"}  # Remove underline for the link
     )
+    verdict_box_woba_content = html.Div(
+        f"wOBA Prediction: {verdict_woba}", style=verdict_box_style_woba)
+    verdict_box_woba.children = [verdict_box_woba_content]
+
 
     verdict_box_style_slg = z_score_box_style_green if verdict_box_class_slg == "z-score-box-green" else z_score_box_style_red
-    verdict_box_slg = html.Div(
-        f"SLG Prediction: {verdict_slg}",
-        style=verdict_box_style_slg,
+    
+    verdict_box_slg = html.A(
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_slg_class.png",
+    target="_blank",  # Open link in a new tab
+    style={"text-decoration": "none"}  # Remove underline for the link
     )
+    verdict_box_slg_content = html.Div(
+        f"SLG Prediction: {verdict_slg}", style=verdict_box_style_slg,
+    )
+    verdict_box_slg.children = [verdict_box_slg_content]
 
     verdict_box_style_babip = z_score_box_style_green if verdict_box_class_babip == "z-score-box-green" else z_score_box_style_red
-    verdict_box_babip = html.Div(
+    
+    verdict_box_babip = html.A(
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_babip_class.png",
+    target="_blank",  # Open link in a new tab
+    style={"text-decoration": "none"}  # Remove underline for the link
+    )
+    verdict_box_babip_content = html.Div(
         f"BABIP Prediction: {verdict_babip}",
         style=verdict_box_style_babip,
     )
+    verdict_box_babip.children = [verdict_box_babip_content]
+
     verdict_box_style_wrc = z_score_box_style_green if verdict_box_class_wrc == "z-score-box-green" else z_score_box_style_red
-    verdict_box_wrc = html.Div(
-        f"wRC+ Prediction: {verdict_wrc}",
-        style=verdict_box_style_wrc,
+        
+    verdict_box_wrc = html.A(
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_wrc_class.png",
+    target="_blank",  # Open link in a new tab
+    style={"text-decoration": "none"}  # Remove underline for the link
     )
 
+    verdict_box_wrc_content = html.Div(
+        f"wRC+ Prediction: {verdict_wrc}", style=verdict_box_style_wrc,
+    )
+    verdict_box_wrc.children = [verdict_box_wrc_content]
+
     selected_columns = [
-        "Name", "AB", "H", "SB", "HR", "RBI", "SO", "AVG",
+        "Name", "bat_side", "AB", "H", "SB", "HR", "RBI", "SO", "AVG",
         "SLG", "OPS", "WAR", "Barrel%"
     ]
 
