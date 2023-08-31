@@ -58,18 +58,24 @@ button_style = {
     "border-radius": "5px",
 }
 
+H3_style = {
+    "font-size": "14px",
+    "color": '#3e363f',
+}
 
 # Create the Dash app
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div(style=BODY_STYLE, children=[
     html.Div([
-        html.H1("Baseball Player Dashboard"),
+        html.H1("Hitter Performance Dashboard", style={"margin-bottom": "5px"}),  
     ], style={"display": "flex", "align-items": "center"}),
-    
+    html.Div([
+        html.P("Click the prediction box for feature importance for each metric.", style={"margin-top": "5px", "color": '#3e363f'}), 
+    ], style={"display": "flex", "align-items": "center"}),
     # Buttons section
     html.Div([
-        html.A(html.Button("Batter Predictor Analysis", style=button_style), href="https://pscushman.github.io/final-project-analysis/", target="_blank"),
+        html.A(html.Button("Hitter Predictor Analysis", style=button_style), href="https://pscushman.github.io/final-project-analysis/", target="_blank"),
         html.A(html.Button("Predicting WAR for 2023", style=button_style), href="https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes", target="_blank"),
         html.A(html.Button("Predicting Pitcher Performance", style=button_style), href="http://127.0.0.1:8050/", target="_blank"),
     ], style={"display": "flex", "align-items": "center", "justify-content": "flex-end"}),
@@ -325,6 +331,12 @@ def update_graphs(name):
         data=player_info_rounded.to_dict("records")
     )
 
+    # Wrap the player info table in a div with a title
+    player_info_with_title = html.Div([
+        html.H3("Player Information: Returns averages from 2018-2022 (excluding 2020)", style=H3_style),  # Add the title
+        player_info_table
+    ])
+
     # Return the updated verdict boxes along with other outputs
     return (
         [dcc.Graph(figure=fig)],  # Output "output-graphs.children"
@@ -344,7 +356,7 @@ def update_graphs(name):
         verdict_box_class_babip, # Output "babip-verdict-box.className"
         verdict_box_wrc,  # Output "wrc-verdict-box.children"
         verdict_box_class_wrc,  # Output "wrc-verdict-box.className"
-        [player_info_table]  # Output "player-info-container.children"
+        [player_info_with_title]   # Output "player-info-container.children"
     )
 if __name__ == "__main__":
     app.run_server(debug=True, port=8051)

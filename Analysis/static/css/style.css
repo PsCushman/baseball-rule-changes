@@ -77,17 +77,16 @@ code {
     font-size: 14px;
     text-align: center;
     background-color: transparent;
-    border: 1px solid #1f1f20;
+    border: 2px solid #1f1f20;
     border-radius: 5px;
     color: #1f1f20;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .link-button:hover {
-    background-color: #e2725b;
+    background-color: #e1ad01;
     color: #1f1f20;
     border-color: #1f1f20;
-    box-shadow: 0 0 50px #e2725b, 0 0 25px #e2725b, 0 0 150px #e2725b, 0 0 200px #e2725b; /* Increase glow effect on hover */
 }
 
 
@@ -105,7 +104,15 @@ code {
     transition: transform 0.3s ease;
 }
 
+.big-ball-button{position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 80px; /* Increased margin for more space */
+    transition: transform 0.3s ease;
+}
+
 .ball-button img {
+    margin-top: 15px;
     width: 60px;
     height: 60px;
     transition: transform 0.3s ease;
@@ -114,16 +121,43 @@ code {
 .ball-button:hover img {
     transform: scale(1.2);
 }
+.big-ball-button img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.big-ball-button:hover img {
+    transform: scale(1.2);
+}
 
 .button-text {
     position: absolute;
-    top: -60px;
+    top: -50px;
     left: 25%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 200px;
     opacity: 0;
     visibility: hidden;
-    background-color: #e2725b;
+    background-color: #e1ad01;
+    font-family: 'Alfa Slab One', cursive;
+    color: #1f1f20;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.big-button-text {
+    position: absolute;
+    top: -50px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #e1ad01;
     font-family: 'Alfa Slab One', cursive;
     color: #1f1f20;
     padding: 5px 5px;
@@ -138,3 +172,7 @@ code {
     visibility: visible;
 }
 
+.big-ball-button:hover .button-text {
+    opacity: 1;
+    visibility: visible;
+}
