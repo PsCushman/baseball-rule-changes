@@ -1,4 +1,5 @@
-![Screen Shot 2023-08-31 at 10 50 34 PM](https://github.com/PsCushman/baseball-rule-changes/assets/122395437/31f2ade7-b3a3-4eb5-9ed5-5b19c5c2a6a1)
+![Screen Shot 2023-08-31 at 10 51 39 PM](https://github.com/PsCushman/baseball-rule-changes/assets/122395437/64c35c7b-1943-4286-abf9-99ebf88032ab)
+
 # Baseball Final Project
 *by David, Payson, Leo*
 
