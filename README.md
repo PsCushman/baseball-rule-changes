@@ -61,6 +61,8 @@ The flask app should run on localhost http://127.0.0.1:8050/ or http://127.0.0.1
 
 Additionally, our [Tableau story dashboard](https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes) delves into 2023 WAR predictions, with a focus on young players. Navigate through interactive graphs and images, and explore predicted WAR for 2023. Take a peek at the team projected to have the highest WAR for 2024 and compare it to the current standings.
 
+![Screen Shot 2023-08-31 at 10 19 56 PM](https://github.com/PsCushman/baseball-rule-changes/assets/122395437/fbc642b0-d668-454f-8bdc-f6fab13ed34a)
+
 ## Project Rubric
 
 ### Data Model Implementation (25 points)
