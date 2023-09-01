@@ -40,8 +40,8 @@ To facilitate interaction with the pitcher and hitter data, we've designed two i
 - For the **Pitcher Dashboard:** Enter the name of any starting pitcher to view average metrics from 2018-2022 (excluding 2020). The dashboard provides z-score differences for 2023 predictions, along with indications of model accuracy. You'll also find images of the top 30 pitchers for 2023 according to ESPN.
 
 - The **Hitter Dashboard:** Functions similarly, offering insights on 256 active position players' metrics and prediction verdicts for the 2023 MLB season. It also showcases a striking background featuring Fenway Park's blueprint.
-- 
-![Screen Shot 2023-08-31 at 8 20 31 PM](https://github.com/PsCushman/baseball-rule-changes/assets/122395437/97a2458a-7abd-47ec-aebd-b976c06c6b96)
+
+![Screen Shot 2023-08-31 at 8 23 40 PM](https://github.com/PsCushman/baseball-rule-changes/assets/122395437/856e7aca-38cd-4f50-a122-dec1a1add7da)
 
 To utilize the dashboards, you will need to download the Dash-Pitcher and Dash-Hitter. Once downloaded, you will need to open gitbash or terminal at the directory. 
 
