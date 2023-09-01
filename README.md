@@ -15,7 +15,17 @@ For in-depth analysis of each component, please follow the links to the respecti
 
 Welcome to our Baseball Analysis project! Our goal is to leverage machine learning algorithms to assist MLB teams in strategic planning, especially in light of the 2023 Rule changes. We're dedicated to providing stakeholders with data-driven insights for making informed decisions about the future.
 
-We've focused on three fundamental aspects of team building:
+The Modern Era of baseball (2000s-2020s) has seen an increased emphasis on advanced statistics and analytics that has revolutionized player evaluation and strategic decision-making.
+
+Teams have leveraged data to evaluate players more precisely, influencing strategic decisions. Pitchers excelled as teams shifted to power pitching as well as optimizing matchups with pitching changes and defensive shifts.
+
+To combat these changes, hitters began emphasizing launch angles and power hitting, leading to fewer balls in play.
+
+To maintain pace of play and increase excitement, this season the MLB implemented a pitch clock, limited defensive shifts, and instituted a universal DH, along with a few changes to increase base stealing attempts.
+
+All together, these changes were expected to increase pace of play, increase balls in play, and overall, just make the game more exciting.
+
+We've focused on three fundamental aspects of team building in this new environment:
 
 1. **Predicting Player WAR:** We employ machine learning to predict which players under 30 are likely to experience the most significant increases in Wins Above Replacement (WAR) in 2023. This predictive model serves as a valuable resource for future years.
 
