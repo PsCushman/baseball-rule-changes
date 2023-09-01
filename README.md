@@ -1,36 +1,43 @@
 # Baseball Final Project
-by David, Payson, Leo
+*by David, Payson, Leo*
 
-Baseball Analysis for a New Game: Predicting Pitching Peformance, Hitting Preformance, and WAR After the 2023 Rule Changes
+**Baseball Analysis for a New Game: Predicting Pitching Performance, Hitting Performance, and WAR After the 2023 Rule Changes**
 
 ## Deployments and Analysis
 
-For deeper analysis of each compnent please folow the links to each section:
+For in-depth analysis of each component, please follow the links to the respective sections:
 
-David: https://pscushman.github.io/final-project-analysis/
+- **David:** [Final Project Analysis](https://pscushman.github.io/final-project-analysis/)
+- **Payson:** [Final Project Analysis](https://pscushman.github.io/final-project-analysis/)
+- **Leo:** [MLB Predictions on Tableau](https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes)
 
-Payson: https://pscushman.github.io/final-project-analysis/
+## Overview
 
-Leo: https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes
+Welcome to our Baseball Analysis project! Our goal is to leverage machine learning algorithms to assist MLB teams in strategic planning, especially in light of the 2023 Rule changes. We're dedicated to providing stakeholders with data-driven insights for making informed decisions about the future.
 
-## Abstract
+We've focused on three fundamental aspects of team building:
 
-Our project attempts to present machine learning alogrythms that could be used to help MLB team plan for the future. With Rule changes taking effect this year, we wanted to present stakeholders with information to make personal decisions into the future. 
+1. **Predicting Player WAR:** We employ machine learning to predict which players under 30 are likely to experience the most significant increases in Wins Above Replacement (WAR) in 2023. This predictive model serves as a valuable resource for future years.
 
-We took on three essential areas of any team building exersise.
+2. **Pitching Performance Analysis:** We've examined pitching performance leading up to 2023, constructing a model to predict performance changes in 2023. Our model identifies the key features contributing to these predictions.
 
-First, we looked to machine learning to perdict which players under 30 were projected to have the most signigant WAR (Wins Above Replacement) increases in 2023 so that the model could be used in future years.
-
-Second, we looked at pitching performace before 2023 to construct a model that could predict an increase or decline in proframce in 2023 and exactly which features were being used by the model to make those predictions.
-
-Lastly, and similarlly, we did a similar thing with hitting performance. 
+3. **Hitting Performance Analysis:** Similar to our pitching analysis, we've conducted an in-depth exploration of hitting performance, predicting changes for 2023.
 
 ## Dashboards and Tableau
 
-For the pitcher and hitter data, we made interactive Plotly Dash dashboards. To run this dashboards, simply download the files and run them on a local host.
+To facilitate interaction with the pitcher and hitter data, we've designed two interactive Plotly Dash dashboards. Follow these steps to run the dashboards on your local host:
 
-For the pitcher dashboard, simply type in the name of any starting pitcher and it will return avergaes of selected metrics from 2018-2022 (excluding 2020) and also the z-score difference for 2023. It will also return a indication of whether our model got that perdiction right. It also, inclues pictures from the top 30 pitchers for 2023 according to ESPN.
+- For the **Pitcher Dashboard:** Enter the name of any starting pitcher to view average metrics from 2018-2022 (excluding 2020). The dashboard provides z-score differences for 2023 predictions, along with indications of model accuracy. You'll also find images of the top 30 pitchers for 2023 according to ESPN.
 
-The hitter dashboard is set up pretty much the same way but includes a stunning background of Fenway Park's blueprint. Type in a name and check out the metrics and prediction verdicts for 256 active position players in the MLB for 2023. In addition, use it as a starting point to navigate to our analysize.
+- The **Hitter Dashboard:** Functions similarly, offering insights on 256 active position players' metrics and prediction verdicts for the 2023 MLB season. It also showcases a striking background featuring Fenway Park's blueprint.
 
-The tableau stroy dashboard explores WAR predictions for 2023 with a look to the futre as it focuses on young players. Toggle through interactive graphs and images as well as take a look at the predicted WAR for 2023. Also, dive into the team with the most predicted WAR for 2024 and see how it stacks up with the current standings. 
+Additionally, our Tableau story dashboard delves into 2023 WAR predictions, with a focus on young players. Navigate through interactive graphs and images, and explore predicted WAR for 2023. Take a peek at the team projected to have the highest WAR for 2024 and compare it to the current standings.
+
+## Results
+
+# Resources
+- [Cross-validation with Upsampling](https://kiwidamien.github.io/how-to-do-cross-validation-when-upsampling-data.html)
+- [PyBaseball GitHub Repository](https://github.com/jldbc/pybaseball)
+- [Data Science Approach to 2021 Hitting Projections](https://towardsdatascience.com/baseball-and-machine-learning-a-data-science-approach-to-2021-hitting-projections-4d6eeed01ede)
+- [Dash Tips and Tricks](https://www.nelsontang.com/blog/2022-06-02-dash-tips)
+
