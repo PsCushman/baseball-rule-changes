@@ -1,6 +1,5 @@
 # Baseball Final Project
-
-    by David, Payson, Leo
+by David, Payson, Leo
 
 Baseball Analysis for a New Game: Predicting Pitching Peformance, Hitting Preformance, and WAR After the 2023 Rule Changes
 
