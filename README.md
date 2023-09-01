@@ -34,4 +34,5 @@ Finally, dataframes with the results were transformed into useable data by creat
 * styles.css
 ## Images folder
 * action-1850887_1280.jpg (photo used on this readme: [https://tsurezure-baseball.com/wp-content/uploads/2016/12/cropped-baseball-1222404_1280.jpg](https://pixabay.com/photos/action-athletes-audience-ballpark-1850887/)https://pixabay.com/photos/action-athletes-audience-ballpark-1850887/)
-
+## Final Presentation/Analysis folder
+* index.html (link to final presentation) 
