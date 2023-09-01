@@ -55,7 +55,27 @@ The flask app should run on localhost http://127.0.0.1:8050/ or http://127.0.0.1
 
 Additionally, our [Tableau story dashboard](https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes) delves into 2023 WAR predictions, with a focus on young players. Navigate through interactive graphs and images, and explore predicted WAR for 2023. Take a peek at the team projected to have the highest WAR for 2024 and compare it to the current standings.
 
-## Results
+## Project Rubric
+
+### Data Model Implementation (25 points)
+- A Python script initializes, trains, and evaluates a model **(10 points)**
+- Data is cleaned, normalized, and standardized before modeling **(5 points)**
+- The model utilizes data retrieved from SQL or Spark **(5 points)**
+- The model demonstrates meaningful predictive power: at least 75% classification accuracy or 0.80 R-squared **(5 points)**
+
+### Data Model Optimization (25 points)
+- The model optimization and evaluation process is documented using a CSV/Excel table or within the Python script **(15 points)**
+- Overall model performance is clearly printed or displayed at the script's conclusion **(10 points)**
+
+### GitHub Documentation (25 points)
+- GitHub repository is organized and free of unnecessary files and folders, utilizing an appropriate .gitignore file **(10 points)**
+- The README is polished and serves as a comprehensive presentation of the project's content **(15 points)**
+
+### Group Presentation (25 points)
+- All group members actively participate in the presentation **(5 points)**
+- The presentation content flows smoothly, including transitions and conclusions **(5 points)**
+- Content presented is relevant and directly related to the project's goals **(10 points)**
+- The presentation effectively maintains audience interest and engagement **(5 points)**
 
 # Resources
 - [Cross-validation with Upsampling](https://kiwidamien.github.io/how-to-do-cross-validation-when-upsampling-data.html)
