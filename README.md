@@ -33,4 +33,4 @@ For the pitcher dashboard, simply type in the name of any starting pitcher and i
 
 The hitter dashboard is set up pretty much the same way but includes a stunning background of Fenway Park's blueprint. Type in a name and check out the metrics and prediction verdicts for 256 active position players in the MLB for 2023. In addition, use it as a starting point to navigate to our analysize.
 
-The tableau stroy dashboard explores WAR predictions for 2023 with a look to the futre as it focuses on young players. Toggle through interactive graphs and images as well as take a look at the 
+The tableau stroy dashboard explores WAR predictions for 2023 with a look to the futre as it focuses on young players. Toggle through interactive graphs and images as well as take a look at the predicted WAR for 2023. Also, dive into the team with the most predicted WAR for 2024 and see how it stacks up with the current standings. 
