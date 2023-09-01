@@ -41,7 +41,19 @@ To facilitate interaction with the pitcher and hitter data, we've designed two i
 
 - The **Hitter Dashboard:** Functions similarly, offering insights on 256 active position players' metrics and prediction verdicts for the 2023 MLB season. It also showcases a striking background featuring Fenway Park's blueprint.
 
-Additionally, our Tableau story dashboard delves into 2023 WAR predictions, with a focus on young players. Navigate through interactive graphs and images, and explore predicted WAR for 2023. Take a peek at the team projected to have the highest WAR for 2024 and compare it to the current standings.
+To utilize the dashboards, you will need to download the Dash-Pitcher and Dash-Hitter. Once downloaded, you will need to open gitbash or terminal at the directory. 
+
+For the picher dashboard use this command:
+    
+    python pitch_app.py 
+
+For the hitter dashboard:
+    
+    python hit_app.py
+    
+The flask app should run on localhost http://127.0.0.1:8050/ or http://127.0.0.1:8051/.
+
+Additionally, our [Tableau story dashboard](https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes) delves into 2023 WAR predictions, with a focus on young players. Navigate through interactive graphs and images, and explore predicted WAR for 2023. Take a peek at the team projected to have the highest WAR for 2024 and compare it to the current standings.
 
 ## Results
 
