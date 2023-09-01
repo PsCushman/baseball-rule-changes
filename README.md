@@ -1,4 +1,4 @@
-![2004 B.P.](https://books.images.hpb.com/9780761134022/large.jpg){width=300px}
+<img src="https://books.images.hpb.com/9780761134022/large.jpg" alt="Image Alt Text" width="300">
 # Baseball Final Project
 *by David, Payson, Leo*
 
