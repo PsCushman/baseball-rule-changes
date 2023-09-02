@@ -13,7 +13,7 @@ Finally, dataframes with the results were transformed into useable data by creat
 * 2018_2023_full_pitcher_stats.ipynb
 
 ## Classification and logistic regression using XGBoost algorithm
-* mlb_pitcher_class.ipynb
+* mlb_pitcher_class.ipynb (for reference see Modeling Part 1: A Regression Approach, by John Pette: https://towardsdatascience.com/baseball-and-machine-learning-a-data-science-approach-to-2021-hitting-projections-4d6eeed01ede)
 * (additional linear regression model see mlb_regression.ipynb)
 
 ## Resources used for ETL, and classification and logistic regression
