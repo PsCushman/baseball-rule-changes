@@ -9,7 +9,7 @@
 
 For in-depth analysis of each component, please follow the links to the respective sections:
 
-- **David:** [Project Analysis/Predictions for Pitcher Performance](https://pscushman.github.io/final-project-analysis/)
+- **David:** [Project Analysis/Predictions for Pitcher Performance](https://dalfonsonash.github.io/mlb_project_4/)
 - **Payson:** [Project Analysis/Predictions for Hitter Perforamnce](https://pscushman.github.io/final-project-analysis/)
 - **Leo:** [WAR Predictions on Tableau](https://public.tableau.com/app/profile/leonardo.pierantoni/viz/MLBPredictions/Story1?publish=yes)
 
