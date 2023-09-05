@@ -49,7 +49,7 @@ To facilitate interaction with the pitcher and hitter data, we've designed two i
 
 ![Screen Shot 2023-08-31 at 8 23 40 PM](https://github.com/PsCushman/baseball-rule-changes/assets/122395437/856e7aca-38cd-4f50-a122-dec1a1add7da)
 
-To utilize the dashboards, you will need to download the Dash-Pitcher and Dash-Hitter. Once downloaded, you will need to open gitbash or terminal at the directory. 
+To utilize the dashboards, you will need to download the dash_pitcher and dash_hitter. Once downloaded, you will need to open gitbash or terminal at the directory. 
 
 For the picher dashboard use this command:
     
