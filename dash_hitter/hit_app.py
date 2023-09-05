@@ -295,7 +295,7 @@ def update_graphs(name):
     verdict_box_style_woba = z_score_box_style_green if verdict_box_class_woba == "z-score-box-green" else z_score_box_style_red
 
     verdict_box_woba = html.A(
-    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_woba_class.png",
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/main/notebooks_PSC/Images/shap_summary_plot_woba.png",
     target="_blank",  # Open link in a new tab
     style={"text-decoration": "none"}  # Remove underline for the link
     )
@@ -307,7 +307,7 @@ def update_graphs(name):
     verdict_box_style_slg = z_score_box_style_green if verdict_box_class_slg == "z-score-box-green" else z_score_box_style_red
     
     verdict_box_slg = html.A(
-    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_slg_class.png",
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/main/notebooks_PSC/Images/shap_babip_class_handy.png",
     target="_blank",  # Open link in a new tab
     style={"text-decoration": "none"}  # Remove underline for the link
     )
@@ -319,7 +319,7 @@ def update_graphs(name):
     verdict_box_style_babip = z_score_box_style_green if verdict_box_class_babip == "z-score-box-green" else z_score_box_style_red
     
     verdict_box_babip = html.A(
-    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_babip_class.png",
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/main/notebooks_PSC/Images/shap_babip_class.png",
     target="_blank",  # Open link in a new tab
     style={"text-decoration": "none"}  # Remove underline for the link
     )
@@ -332,7 +332,7 @@ def update_graphs(name):
     verdict_box_style_wrc = z_score_box_style_green if verdict_box_class_wrc == "z-score-box-green" else z_score_box_style_red
         
     verdict_box_wrc = html.A(
-    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/PSC/Images/shap_wrc_class.png",
+    href="https://raw.githubusercontent.com/PsCushman/baseball-rule-changes/main/notebooks_PSC/Images/shap_wrc_class.png",
     target="_blank",  # Open link in a new tab
     style={"text-decoration": "none"}  # Remove underline for the link
     )
